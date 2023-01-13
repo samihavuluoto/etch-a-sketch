@@ -1,0 +1,12 @@
+#masterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 900px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.hover {
+    background-color: palevioletred;
+}
