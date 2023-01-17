@@ -10,6 +10,15 @@ function removeChildren(){
     children.forEach(element => element.remove());
 }
 
+function randomColor(){
+    let maxVal = 0xFFFFFF;
+    let randomNumber = Math.random() * maxVal;
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randColor = randomNumber.padStart(6, 0);
+    return `#${randColor.toUpperCase()}`
+}
+
 
 function resizeSquares() {
     let b = prompt("How many rows of squares would you like?");
@@ -30,7 +39,8 @@ function resizeSquares() {
         square.style.flex = "auto";
         square.style.flexShrink = 0;
         square.style.margin = "0px";
-        square.onmouseover = () => square.classList.add("hover");
+        let c = randomColor();
+        square.onmouseover = () => square.style.backgroundColor = c;
         masterContainer.appendChild(square);
     }
 }
