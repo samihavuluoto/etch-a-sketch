@@ -10,17 +10,7 @@ function removeChildren(){
     children.forEach(element => element.remove());
 }
 
-function randomColor(){
-    let maxVal = 0xFFFFFF;
-    let randomNumber = Math.random() * maxVal;
-    randomNumber = Math.floor(randomNumber);
-    randomNumber = randomNumber.toString(16);
-    let randColor = randomNumber.padStart(6, 0);
-    return `#${randColor.toUpperCase()}`
-}
-
-
-function resizeSquares() {
+function resizeSquares(){
     let b = prompt("How many rows of squares would you like?");
     
     let a = b > 100 ? 100 : b;
@@ -39,8 +29,42 @@ function resizeSquares() {
         square.style.flex = "auto";
         square.style.flexShrink = 0;
         square.style.margin = "0px";
-        let c = randomColor();
-        square.onmouseover = () => square.style.backgroundColor = c;
+        square.onmouseover = () => {
+            switch(square.className) {
+                case "":
+                    square.className = "hover";
+                    break;
+                case "hover":
+                    square.className = "hover2";
+                    break;
+                case "hover2":
+                    square.className = "hover3";
+                    break;
+                case "hover3":
+                    square.className = "hover4";
+                    break;
+                case "hover4":
+                    square.className = "hover5";
+                    break;
+                case "hover5":
+                    square.className = "hover6";
+                    break;
+                case "hover6":
+                    square.className = "hover7";
+                    break;
+                case "hover7":
+                    square.className = "hover8";
+                    break;
+                case "hover8":
+                    square.className = "hover9";
+                    break;
+                case "hover9":
+                    square.className = "hover10";
+                    break;
+                case "hover10":
+                    break;
+            }
+        };
         masterContainer.appendChild(square);
     }
 }
